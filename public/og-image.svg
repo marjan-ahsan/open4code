@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A2E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F0F12;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E16A54;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#36A18B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" />
+  
+  <!-- Abstract Grid Pattern (subtle) -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Main Title -->
+  <text x="50%" y="45%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="120" fill="#FFFFFF">Open<tspan fill="url(#text-grad)">4</tspan>Code</text>
+  
+  <!-- Subtitle -->
+  <text x="50%" y="60%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="500" font-size="48" fill="#A1A1AA">The Future of Learning</text>
+  
+  <!-- Decoration: Simple Code Bracket Shapes -->
+  <path d="M 100,200 L 50,315 L 100,430" stroke="url(#text-grad)" stroke-width="8" fill="none" opacity="0.5" transform="translate(0,0)"/>
+  <path d="M 1100,200 L 1150,315 L 1100,430" stroke="url(#text-grad)" stroke-width="8" fill="none" opacity="0.5" transform="translate(0,0)"/>
+</svg>

@@ -1,0 +1,5 @@
+{
+  "name": "Codex - The Future of Learning",
+  "description": "An interactive learning platform similar to W3Schools, featuring a modern design, course explorer with interactive planning, sidebar navigation, a unique icon system, and local storage-based progress tracking. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
