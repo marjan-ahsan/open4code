@@ -351,11 +351,18 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ progress, onToggleLesson, o
         <main ref={mainContentRef} className="flex-1 overflow-y-auto relative flex flex-col">
           <header className={`sticky top-0 z-20 flex items-center justify-between px-4 py-3 transition-all duration-200 ${scrollY > 10 ? 'bg-bg/90 backdrop-blur-xl border-b border-border' : ''}`}>
             <div className="flex items-center gap-2">
+              <button
+                onClick={onBack}
+                className="p-2 rounded-lg hover:bg-muted transition-colors text-text-secondary border border-border/50 hidden sm:flex items-center gap-2 text-xs font-medium mr-2"
+                title="Back to Explorer"
+              >
+                <FaArrowLeft /> Explorer
+              </button>
               <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-1.5 rounded-lg hover:bg-muted transition-colors text-text-secondary">
                 <span className="sm:hidden"><FaBars /></span>
                 <span className="hidden sm:inline text-sm">{isSidebarOpen ? <FaChevronLeft /> : <FaChevronRight />}</span>
               </button>
-              <h1 className="font-heading text-base sm:text-lg font-bold truncate max-w-[180px] sm:max-w-none text-text-primary">{course.title}</h1>
+              <h1 className="font-heading text-base sm:text-lg font-bold truncate max-w-[180px] sm:max-w-none text-text-primary ml-2">{course.title}</h1>
             </div>
             <div className="flex items-center gap-1">
               <button onClick={() => handleShare('twitter')} className="p-2 rounded-lg text-text-tertiary hover:text-sky-500 hover:bg-muted transition-colors text-sm"><FaTwitter /></button>

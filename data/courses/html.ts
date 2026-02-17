@@ -12,6 +12,7 @@ export const htmlCourse: Course = {
   difficulty: 'Beginner',
   popularity: 90,
   releaseDate: '2024-01-10',
+  tags: ['HTML5', 'Semantic Web', 'Accessibility', 'SEO', 'Forms'],
   modules: [
     {
       title: 'Module 1: Your First Web Page',
@@ -370,6 +371,15 @@ h1 {
           title: 'Code Comments & Style',
           duration: '10min',
           content: "Good developers write clean, readable code. Comments (`<!-- ... -->`) allow you to leave notes in your code for yourself or other developers. They are ignored by the browser. Following a consistent style guide (e.g., using consistent indentation) also makes your code much more professional and easier to maintain.",
+        },
+        {
+          id: 'html-m6-seo',
+          title: 'SEO Fundamentals',
+          duration: '15min',
+          content: "Search Engine Optimization (SEO) starts with good HTML. Search engines use bots called 'crawlers' to understand your content. Using semantic tags (`<article>`, `<nav>`), proper heading hierarchy (`<h1>` to `<h6>`), and meaningful `alt` text for images helps these crawlers index your site correctly. The `<title>` tag and `<meta name='description'>` are critical as they often determine what is displayed in search results.",
+          aids: {
+            tips: ["Keep your `<title>` under 60 characters and your meta description under 160 characters to ensure they display fully in search results."]
+          }
         },
         {
           id: 'html-m6-l3',

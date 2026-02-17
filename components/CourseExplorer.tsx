@@ -34,7 +34,7 @@ const CourseCard: React.FC<{ course: Course; onSelectCourse: (course: Course) =>
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-    let timeoutId: number;
+    let timeoutId: any;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -92,9 +92,28 @@ const CourseCard: React.FC<{ course: Course; onSelectCourse: (course: Course) =>
         </div>
 
         {course.tags && (
-          <div className="flex flex-wrap gap-1.5 mt-3">
-            {course.tags.map(tag => (
-              <span key={tag} className="bg-muted text-text-tertiary text-[10px] font-medium px-2 py-0.5 rounded-md">{tag}</span>
+          <div className="flex flex-wrap gap-2 mt-3">
+            {course.tags.map((tag, i) => (
+              <motion.span
+                key={tag}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 15,
+                  delay: 0.1 + (i * 0.05)
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -2,
+                  rotate: Math.random() > 0.5 ? 2 : -2,
+                  transition: { duration: 0.2 }
+                }}
+                className="bg-primary/10 text-primary text-[10px] font-semibold px-2.5 py-1 rounded-full border border-primary/20 cursor-default"
+              >
+                {tag}
+              </motion.span>
             ))}
           </div>
         )}
@@ -186,8 +205,8 @@ const CourseExplorer: React.FC<CourseExplorerProps> = ({ onSelectCourse, progres
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={`px-3 py-2.5 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${showFilters || areFiltersActive
-                  ? 'bg-primary text-white border-primary'
-                  : 'bg-surface border-border text-text-secondary hover:border-text-tertiary'
+                ? 'bg-primary text-white border-primary'
+                : 'bg-surface border-border text-text-secondary hover:border-text-tertiary'
                 }`}
             >
               <FaFilter className="text-xs" />
@@ -239,8 +258,8 @@ const CourseExplorer: React.FC<CourseExplorerProps> = ({ onSelectCourse, progres
                           key={category}
                           onClick={() => setActiveCategory(category)}
                           className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${activeCategory === category
-                              ? 'bg-primary text-white'
-                              : 'bg-muted text-text-secondary hover:text-text-primary'
+                            ? 'bg-primary text-white'
+                            : 'bg-muted text-text-secondary hover:text-text-primary'
                             }`}
                         >
                           {category}
@@ -256,8 +275,8 @@ const CourseExplorer: React.FC<CourseExplorerProps> = ({ onSelectCourse, progres
                           key={difficulty}
                           onClick={() => setActiveDifficulty(difficulty)}
                           className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${activeDifficulty === difficulty
-                              ? 'bg-primary text-white'
-                              : 'bg-muted text-text-secondary hover:text-text-primary'
+                            ? 'bg-primary text-white'
+                            : 'bg-muted text-text-secondary hover:text-text-primary'
                             }`}
                         >
                           {difficulty}

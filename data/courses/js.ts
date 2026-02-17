@@ -12,6 +12,7 @@ export const jsCourse: Course = {
   difficulty: 'Intermediate',
   popularity: 98,
   releaseDate: '2024-02-01',
+  tags: ['JavaScript', 'ES6+', 'Async', 'DOM', 'Data Structures'],
   modules: [
     {
       title: 'Module 1: JavaScript Fundamentals',
@@ -68,6 +69,15 @@ for (let i = 0; i < 3; i++) {
           content: 'Functions are reusable blocks of code. You can "call" a function to execute its code. Functions can take inputs (parameters) and return an output. Arrow functions (`=>`) are a modern, concise way to write functions.',
           aids: {
             tips: ["Functions help you follow the DRY principle: Don't Repeat Yourself."]
+          }
+        },
+        {
+          id: 'js-debug',
+          title: 'Debugging Like a Pro',
+          duration: '15min',
+          content: "Coding is 10% writing and 90% debugging. Learn to use the browser's Developer Tools (F12). The `console` object is your best friend: `console.log()` prints values, `console.table()` displays arrays/objects nicely, and `console.error()` highlights issues. Learn to use breakpoints to pause code execution and inspect variables at specific moments.",
+          aids: {
+            tips: ["`debugger;` is a keyword you can write in your code. When the browser sees it (and DevTools is open), it will convert it into a breakpoint and pause execution there."]
           }
         },
         {
@@ -129,12 +139,12 @@ console.log(sum); // 15`
           duration: '15min',
           content: 'JSON (JavaScript Object Notation) is a lightweight format for storing and transporting data. It\'s the standard format used by most web APIs. `JSON.stringify()` converts a JavaScript object to a JSON string, and `JSON.parse()` converts a JSON string back into a JavaScript object.'
         },
-         {
+        {
           id: 'js-9',
           title: 'Data Structures Quiz',
           duration: '10min',
           content: 'Test your knowledge of JavaScript objects and arrays.',
-           quiz: {
+          quiz: {
             title: "Data Structures Quiz",
             questions: [
               { question: "Which method adds one or more elements to the end of an array and returns the new length?", options: ["shift()", "unshift()", "pop()", "push()"], correctAnswerIndex: 3, explanation: "`push()` adds elements to the end of an array." },
@@ -174,7 +184,7 @@ console.log(sum); // 15`
         }
       ]
     },
-     {
+    {
       title: 'Module 4: Asynchronous JavaScript',
       lessons: [
         {
@@ -267,16 +277,16 @@ fetchUserData();`
         }
       ]
     },
-     {
-        title: 'Module 6: Capstone Project',
-        lessons: [
-            {
-                id: 'js-capstone',
-                title: 'Project: Build a Weather App',
-                duration: '120min',
-                content: "Time to build a complete application. Your capstone project is to create a weather app. It will have an input field for a city name. When the user submits the form, your app will use the `fetch` API to get weather data from a free public API (like OpenWeatherMap). You will then use your DOM manipulation skills to display the current temperature, weather conditions, and humidity on the page. This project combines everything: fundamentals, DOM interaction, and asynchronous JavaScript."
-            }
-        ]
+    {
+      title: 'Module 6: Capstone Project',
+      lessons: [
+        {
+          id: 'js-capstone',
+          title: 'Project: Build a Weather App',
+          duration: '120min',
+          content: "Time to build a complete application. Your capstone project is to create a weather app. It will have an input field for a city name. When the user submits the form, your app will use the `fetch` API to get weather data from a free public API (like OpenWeatherMap). You will then use your DOM manipulation skills to display the current temperature, weather conditions, and humidity on the page. This project combines everything: fundamentals, DOM interaction, and asynchronous JavaScript."
+        }
+      ]
     },
     deploymentModule,
   ]
