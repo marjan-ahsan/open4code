@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import LandingPage from './components/LandingPage';
 import CourseExplorer from './components/CourseExplorer';
 import CourseDetail from './components/CourseDetail';
@@ -99,6 +100,7 @@ const App: React.FC = () => {
         </motion.div>
       </AnimatePresence>
       <HelpSystem currentView={currentView} />
+      <Analytics />
     </div>
   );
 };
